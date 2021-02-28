@@ -1,11 +1,26 @@
-module.exports = function check(str, bracketsConfig) {
-    let arr = bracketsConfig.map(i=>i.join(""));
-  
-    for (let i = 0; i < arr.length; i++) {
-        if (str.includes(arr[i])) {
-            str = str.replace(arr[i], '');
-            i = -1;
-        }
+ 
+    let arr = [];
+    for (let q = 0; q < str.length; q++) {
+        arr += str[q];
     }
-    return str.length === 0 ? true : false;
+    let arr3 = [];
+    for (let w = 0; w < str.length / 2; w++) {
+        arr3 += str[w];
+    }
+    let arr2 = arr.slice(arr.length / 2);
+
+     for (i = 0; i < arr3.length ; i++) {
+         for (let j = 0; j < arr2.length; j++) {
+             if (arr3[i] == arr2[j]) {
+                return false;
+             }
+             else if( arr2 !== arr3.reverse){
+                 return true;
+             }
+             else {
+                 return false;
+             }
+         }
+     }
+
 }
