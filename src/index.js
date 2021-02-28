@@ -1,4 +1,5 @@
- 
+ module.exports = function check(str, bracketsConfig) {
+   
     let arr = [];
     for (let q = 0; q < str.length; q++) {
         arr += str[q];
@@ -22,5 +23,4 @@
              }
          }
      }
-
 }
